@@ -16,7 +16,7 @@ from
 users
 where
 email='$email' and
-status = true;
+status = true
 ";
 $ans = pg_query($conn, $sql_validate_email);
 if($ans){//$ans==true
@@ -31,7 +31,9 @@ if($ans){//$ans==true
 ";
 $ans = pg_query($conn, $sql);
 if($ans){
-    echo"user has been created successfully";
+    //User has been created susccessfully";
+    echo"<script>alert('user has been created. Go to login!')</script>";
+    header('refresh: 0; URL=http://localhost/pet-store/src/signin.html');
 }else{
     echo "Error";
 }
